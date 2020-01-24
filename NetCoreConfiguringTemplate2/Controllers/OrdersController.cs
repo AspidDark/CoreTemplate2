@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +8,7 @@ using NetCoreConfiguringTemplate2.Queries;
 namespace NetCoreConfiguringTemplate2.Controllers
 {
     //Nuget MediatR, MediatR.Extensions.Microsoft.DependencyInjection
+    //FluentValidation , FluentValidation.DependencyInjectionExtensions
     [ApiController]
     [Route("[controller]")]
     public class OrdersController : ControllerBase

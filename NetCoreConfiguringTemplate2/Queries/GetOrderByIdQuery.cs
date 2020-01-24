@@ -12,5 +12,6 @@ namespace NetCoreConfiguringTemplate2.Queries
         {
             OrderId = orderId;
         }
+
     }
 }
