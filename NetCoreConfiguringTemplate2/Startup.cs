@@ -12,6 +12,7 @@ using NetCoreConfiguringTemplate2.Extensions;
 using NetCoreConfiguringTemplate2.Mapping;
 using NetCoreConfiguringTemplate2.PipelineBehaviors;
 using NetCoreConfiguringTemplate2.Repositories;
+using NetCoreConfiguringTemplate2.Repositories.Cached;
 
 namespace NetCoreConfiguringTemplate2
 {
@@ -29,13 +30,19 @@ namespace NetCoreConfiguringTemplate2
         {
             services.AddControllers();
 
+            #region Scrutor
+            services.AddSingleton<ICustomersRepository, CustomersRepository>();
+            services.Decorate<ICustomersRepository, CachedCustomersRepository>();
+            #endregion
+
             services.AddSingleton<ICustomersRepository, CustomersRepository>();
             services.AddSingleton<IOrdersRepository, OrdersRepository>();
             services.AddSingleton<IMapper, Mapper>(); //custom bad mapper
             services.AddMediatR(typeof(Startup)); //scan for handlers and register them
-            //validation from here
+            #region //validation from here
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

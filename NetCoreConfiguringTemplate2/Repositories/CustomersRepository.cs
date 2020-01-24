@@ -10,9 +10,9 @@ namespace NetCoreConfiguringTemplate2.Repositories
     {
         private readonly List<CustomerDto> _customers = new List<CustomerDto>
         {
-            new CustomerDto{Id = Guid.Parse("64fa643f-2d35-46e7-b3f8-31fa673d719b"), Name = "Nick Chapsas"},
+            new CustomerDto{Id = Guid.Parse("64fa643f-2d35-46e7-b3f8-31fa673d719b"), Name = "Tim B"},
             new CustomerDto{Id = Guid.Parse("fc7cdfc4-f407-4955-acbe-98c666ee51a2"), Name = "John Doe"},
-            new CustomerDto{Id = Guid.Parse("a46ac8f4-2ecd-43bf-a9e6-e557b9af1d6e"), Name = "Sam McRandom"}
+            new CustomerDto{Id = Guid.Parse("a46ac8f4-2ecd-43bf-a9e6-e557b9af1d6e"), Name = "Dark Aspid"}
         };
         
         public Task<CustomerDto> GetCustomerAsync(Guid customerId)
