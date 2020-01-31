@@ -9,7 +9,7 @@ namespace NetCoreConfiguringTemplate2.Controllers
 {
     //Nuget MediatR, MediatR.Extensions.Microsoft.DependencyInjection
     //FluentValidation , FluentValidation.DependencyInjectionExtensions
-    //Scrutor
+    //Scrutor-Decorator for cacheing
     [ApiController]
     [Route("[controller]")]
     public class OrdersController : ControllerBase
